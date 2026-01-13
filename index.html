@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halte Hamac — halte de passage sur le GR®654</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --terre:#8b6b4f;
+  --bois:#5f4a3b;
+  --mousse:#6f8f6b;
+  --ciel:#b8d8e6;
+  --sable:#f4efe9;
+  --bordeaux:#6b0f1a;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:var(--sable);
+  color:#2f2f2f;
+  line-height:1.6;
+  padding-top:70px; /* espace pour le bandeau */
+}
+
+/* =========================
+   BANDEAU DEFILANT FIXE
+   ========================= */
+.top-banner{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:9999;
+
+  background:rgba(244,239,233,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(95,74,59,.15);
+  padding:.6rem 0;
+
+  /* apparition différée */
+  opacity: 0;
+  animation: fadeInBanner 1.2s ease-out forwards;
+  animation-delay: 1.5s; /* ✅ 3–4 secondes */
+}
+
+
+.marquee{
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.marquee__track{
+  display:inline-flex;
+  gap:12rem;
+  width:max-content;
+  transform: translateX(0);animation: marquee 30s linear infinite;
+}
+
+.marquee__item{
+  font-family:'Playfair Display', serif;
+  font-weight:600;
+  font-size:1.55rem; /* 1.5x */
+  color:var(--bordeaux);
+  letter-spacing:.02em;
+}
+
+/* droite -> gauche */
+@keyframes marquee{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.15)),
+    url("01.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:2rem;
+}
+
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.4rem,5vw,4rem);
+  color:white;
+  margin-bottom:1rem;
+}
+
+.hero p{
+  font-size:1.2rem;
+  max-width:700px;
+  margin:auto;
+  color:#f5f5f5;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:5rem 1.5rem;
+}
+
+section h2{
+  font-family:'Playfair Display', serif;
+  font-size:2.2rem;
+  margin-bottom:1.5rem;
+  color:var(--bois);
+}
+
+section p{
+  max-width:760px;
+  margin-bottom:1.2rem;
+}
+
+/* IMAGE FULL */
+.full-image{
+  width:100%;
+  height:65vh;
+  object-fit:cover;
+  object-position:center 25%;
+  display:block;
+}
+.full-image--brunch{
+  object-position: center 45%;
+  height:80vh;
+}
+
+/* GRID PHOTOS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.2rem;
+}
+
+.grid img{
+  width:100%;
+  border-radius:12px;
+  object-fit:cover;
+  height:260px;
+}
+
+/* CALLOUT */
+.callout{
+  background:linear-gradient(135deg,var(--ciel),#ffffff);
+  border-radius:20px;
+  padding:3rem;
+  margin-top:3rem;
+}
+
+/* FOOTER */
+footer{
+  background:var(--bois);
+  color:#eee;
+  text-align:center;
+  padding:3rem 1.5rem;
+}
+
+footer p{opacity:.85;font-size:.95rem}
+ba,nde
+@media(max-width:700px){
+  .hero{min-height:85vh}
+  .marquee__item{font-size:1.25rem;}
+}
+@keyframes fadeInBanner{
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BANDEAU -->
+<div class="top-banner" role="status" aria-live="polite">
+  <div class="marquee">
+    <div class="marquee__track">
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+      <span class="marquee__item"     >Ouverture Avril 2027•            </span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <h1>Halte Hamac</h1>
+    <p>Halte de passage sur le GR®654 — un lieu sobre et habité, pensé pour le repos réel des marcheurs en itinérance.</p>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section>
+  <h2>Au service du chemin</h2>
+  <p>
+    Halte Hamac est une halte de passage située le long du GR®654, sur un tronçon rural entre Châlus et Thiviers.
+    Elle accueille les marcheurs pour une nuit, dans la continuité du chemin, sans logique de séjour ni de captation.
+  </p>
+  <p>
+    Le couchage en hamac limite l’emprise bâtie et s’inscrit dans une relation respectueuse au milieu naturel.
+    Les temps de repas constituent des repères sobres du chemin, portés par la présence des hôtes.
+  </p>
+</section>
+
+<img src="06.jpg" alt="Hamac dans les bois" class="full-image">
+
+<!-- RANDONNEURS -->
+<section>
+  <h2>Une halte sur le chemin</h2>
+  <p>L’accueil se fait en fin d’après-midi, suivi d’un repas partagé et d’un temps libre autour du brasero.</p>
+  <p>La nuit se déroule ensuite en hamac, avant un petit déjeuner matinal et le départ.</p>
+
+  <div class="grid">
+    <img src="07.jpeg" alt="Hamac sous abri">
+    <img src="08.jpg" alt="Hamac dans le jardin">
+    <img src="05.jpg" alt="Salle à manger Halte Hamac">
+  </div>
+</section>
+
+<!-- TERRITOIRE -->
+<img src="petit-dej.jpg" alt="Petit déjeuner Halte Hamac" class="full-image full-image--brunch">
+
+
+<section>
+  <h2>Implantation & territoire</h2>
+  <p>Implantation à proximité immédiate du GR®654, en retrait des bourgs, dans un environnement boisé.</p>
+</section>
+
+<footer>
+  <p>Ouverture prévisionnelle : avril 2027</p>
+  <p>Contact marcheurs et partenaires : informations à venir</p>
+</footer>
+
+</body>
+</html>
